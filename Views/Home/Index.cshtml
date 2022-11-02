@@ -1,0 +1,31 @@
+﻿@model IEnumerable<TestTask.Models.Market>
+@{
+    Layout = null;
+}
+<!doctype html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    <h1>
+        Список
+    </h1>
+    @foreach (var market in Model)
+    {
+        <div>
+            <p>@market.Name</p>
+            <p>@market.Price руб/кг</p>
+            <form action="~/Home/Page/@market.Id">
+				<button>Посмотреть</button>
+			</form>
+            <br>
+            <hr>
+        </div>
+    }
+    <form action="~/Home/Create">
+		<button>Добавить</button>
+	</form>
+</body>
+</html>

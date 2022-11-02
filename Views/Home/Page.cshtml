@@ -1,0 +1,39 @@
+﻿@model IEnumerable<TestTask.Models.Market>
+@{Layout = null;}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Страница продукта
+		</title>
+	</head>
+	<body>
+		<div>
+			<input type="hidden" value="" name="MarketId"/>
+			@foreach (var market in Model)
+			{
+			@if (market.Id == @ViewBag.id)
+			{
+			<div>
+			<fieldset>
+				<form action="~/Home/Index">
+					<button>Назад</button>
+				</form>
+				<h1>@market.Name</h1>
+				<p>@market.Description</p>
+				<h2>@market.Price руб/кг</h2>
+				<form action="~/Home/Change/@market.Id">
+					<button>Изменить</button>
+				</form>
+				<br>
+				<form action="~/Home/Delete/@market.Id">
+					<button>Удалить</button>
+				</form>
+			</fieldset>
+			</div>	
+			}
+			}
+		</div>
+	</body>
+</html>
+

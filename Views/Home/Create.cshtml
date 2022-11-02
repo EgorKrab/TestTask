@@ -1,0 +1,30 @@
+﻿@model IEnumerable<TestTask.Models.Market>
+@{Layout = null;}
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>
+			Добавление товара
+		</title>
+	</head>
+	<body>
+		<div>
+			<fieldset>
+			<form method="post">
+				<p>Название товара</p>
+				<textarea cols="50" name="Name"></textarea>
+				<p>Описание товара</p>
+				<textarea cols="50" name="Description"></textarea>
+				<p>Цена товара</p>
+				<textarea cols="50" name="Price"></textarea>
+				<br>
+				<input type="submit" value="Добавить">
+			</form>
+			<br>
+			<form action="~/Home/Index">
+				<button>Отменить</button>
+			</form>
+			</fieldset>
+		</div>
+	</body>
+</html>
